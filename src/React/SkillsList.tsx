@@ -39,16 +39,24 @@ const SkillsList = () => {
   const skills = {
     "API REST": [
       "Desarrollo APIs escalables y documentadas para conectar tu app móvil, web o servicios de terceros",
+      "Seguridad avanzada y control de acceso",
       "Sistemas de autenticación",
       "Optimización de rendimiento",
     ],
     "Aplicaciones web a medida": [
-      "Interfaces interactivas",
+      "Interfaces ",
+      "Interfaces intuitivas e interactivas",
       "Dashboard",
-      "Landing pages interactivas",
+      "Escalabilidad para crecer con su negocio",
+      "Integración con sus sistemas existentes",
+      "Seleccionaremos las mejores herramientas y tecnologías para optimizar sus operaciones"
     ],
     "Automatización de procesos": [
-      "Automatizo tareas repetitivas de tu negocio"
+      "Automatizo tareas repetitivas de tu negocio",
+      "IA para toma de decisiones"
+    ],
+    "Mantenimiento y soporte técnico": [
+      "Nos aseguramos de que el software funcione correctamente después de su puesta en marcha"
     ]
   };
 
