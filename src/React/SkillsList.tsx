@@ -37,20 +37,19 @@ const SkillsList = () => {
   const [openItem, setOpenItem] = useState<string | null>(null);
 
   const skills = {
+    "API REST": [
+      "Desarrollo APIs escalables y documentadas para conectar tu app móvil, web o servicios de terceros",
+      "Sistemas de autenticación",
+      "Optimización de rendimiento",
+    ],
     "Aplicaciones web a medida": [
       "Interfaces interactivas",
       "Dashboard",
       "Landing pages interactivas",
     ],
     "Automatización de procesos": [
-      "Automatizo tareas repetitivas de tu negocio",
-      "React Native mobile apps",
-    ],
-    "API REST": [
-      "Desarrollo APIs escalables y documentadas para conectar tu app móvil, web o servicios de terceros",
-      "Sistemas de autenticación",
-      "Optimización de rendimiento",
-    ],
+      "Automatizo tareas repetitivas de tu negocio"
+    ]
   };
 
   const toggleItem = (item: string) => {
