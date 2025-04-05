@@ -5,11 +5,12 @@ stages:
   - deploy
 
 before_script:
-  - apt-get update -yq && apt-get install -yq openssh-client rsync
-  - mkdir -p ~/.ssh
-  - echo "$DEPLOY_KEY" | tr -d '\r' > ~/.ssh/id_rsa  # elimina \r si los hay
-  - chmod 600 ~/.ssh/id_rsa
-  - ssh-keyscan -H 54.158.56.182 >> ~/.ssh/known_hosts
+    - eval $(ssh-agent -s)  # Inicia el agente SSH
+    - echo "$DEPLOY_KEY" | tr -d '\r' | ssh-add -  # Añade la clave privada al agente
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - ssh-keyscan -H 54.158.56.182 >> ~/.ssh/known_hosts  # Agrega el servidor a known_hosts
+    - chmod 644 ~/.ssh/known_hosts
 
 build:
   stage: build
@@ -23,4 +24,4 @@ build:
 deploy:
   stage: deploy
   script:
-    - rsync -e "ssh -i ~/.ssh/id_rsa" -avz --delete dist/ ubuntu@54.158.56.182:/var/www/html/
+    - rsync -avz --delete dist/ ubuntu@54.158.56.182:/var/www/html/
