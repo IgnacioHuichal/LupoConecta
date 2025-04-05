@@ -1,21 +1,28 @@
 deploy_to_lightsail:
   stage: deploy
-  image: alpine  # Imagen ligera con SSH
+  image: alpine:3.18
+  variables:
+    LIGHTSAIL_IP: "tu-ip-lightsail"  # Puedes ponerla directamente o usar variable CI/CD
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "develop"'  # Solo se ejecuta para la rama develop
   before_script:
     - apk add --no-cache openssh-client rsync git nodejs npm
-    - eval $(ssh-agent -s)
     - mkdir -p ~/.ssh
     - chmod 700 ~/.ssh
-    - echo "$SSH_PRIVATE_KEY" > ~/.ssh/lightsail_key
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/lightsail_key
     - chmod 600 ~/.ssh/lightsail_key
+    - sed -i 's/\\n/\n/g' ~/.ssh/lightsail_key
+    - eval $(ssh-agent -s)
     - ssh-add ~/.ssh/lightsail_key
   script:
-    - ssh -o StrictHostKeyChecking=no ubuntu@54.158.56.182NCIA << EOF
+    - ssh -o StrictHostKeyChecking=no ubuntu@$LIGHTSAIL_IP "
+      sudo rm -rf /var/www/html/*
+      [ -d /home/ubuntu/tu-repo-astro ] || git clone -b develop $CI_REPOSITORY_URL /home/ubuntu/tu-repo-astro
       cd /home/ubuntu/tu-repo-astro
+      git checkout develop
       git pull origin develop
-      npm install
+      npm ci --omit=dev
       npm run build
       sudo cp -r dist/* /var/www/html/
-      EOF
-  only:
-    - develop  # Solo se ejecuta en pushes a main
+      sudo chown -R www-data:www-data /var/www/html
+      "
