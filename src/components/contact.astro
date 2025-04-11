@@ -1,12 +1,11 @@
 
-<section id="contact" class="lg:max-w-[1200px] flex flex-col gap-8 lg:gap-10 px-5">
+<section id="contact" class="w-full lg:max-w-[1200px] flex flex-col justify-center gap-8 lg:gap-10 px-5 mx-auto pt-10">
   <!-- main section -->
-  <div class="grid grid-cols-1 gap-[55px] pt-20 lg:grid-cols-1 place-content-center">
-    <div class="col-span-1 bg-body rounded-[30px] py-[76px] flex flex-col gap-[30px] w-full">
+  <div class="flex flex-col items-center gap-8">
       <h3 class="text-4xl md:text-5xl font-medium text-[var(--white)] mb-6">
         Contacto
       </h3>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="gap-8">
         <div class="text-[var(--white-icon)]">
           <p class="mb-4">
             Si necesitas más información, tienes dudas o quieres colaborar con nosotros, no dudes en escribirnos.
@@ -25,52 +24,29 @@
             </a>
             +569 48111054
           </p>
-        </div>
-
-        <div  class="px-10 xl:px-15" >
-          <form
-            id="contact-form"
-            action="https://formspree.io/f/mnnjznkj"
-            method="POST"
-            class="flex flex-col gap-4"
-          >
-            <input
-              type="text"
-              name="from_name"
-              placeholder="Nombre"
-              required
-              class="px-4 py-2 bg-[#1414149c] text-[var(--white)] border border-[var(--white-icon-tr)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--sec)]"
-            />
-            <input
-              type="email"
-              name="reply_to"
-              placeholder="Correo"
-              required
-              class="px-4 py-2 bg-[#1414149c] text-[var(--white)] border border-[var(--white-icon-tr)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--sec)]"
-            />
-            <textarea
-              name="message"
-              placeholder="¿En qué podemos ayudarte?"
-              rows="6"
-              required
-              class="px-4 py-2 bg-[#1414149c] text-[var(--white)] border border-[var(--white-icon-tr)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--sec)] resize-none"
-            ></textarea>
-            <button
-              type="submit"
-              class="px-4 py-2 bg-[var(--white-icon-tr)] text-[var(--white)] rounded-lg opacity-60 transition-opacity border border-[var(--white-icon-tr)] hover:opacity-100 hover:bg-[var(--white-icon-tr)]"
+          <p class="mb-4 flex items-center gap-4">
+            <!-- Enlace que abre WhatsApp con el SVG -->
+            <a
+              href="https://wa.me/+56948111054?text=Hola,%20me%20interesa%20tu%20servicio"
+              target="_blank"
+              rel="noopener noreferrer"
+              class=""
             >
-              Enviar
-            </button>
-          </form>
-          <div
-            id="form-message"
-            class="hidden justify-center items-center mt-4 text-[var(--white)] text-lg"
-          >
-            ✅ Thank you for your message!
-          </div>
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24" height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="m18.73 5.41l-1.28 1L12 10.46L6.55 6.37l-1.28-1A2 2 0 0 0 2 7.05v11.59A1.36 1.36 0 0 0 3.36 20h3.19v-7.72L12 16.37l5.45-4.09V20h3.19A1.36 1.36 0 0 0 22 18.64V7.05a2 2 0 0 0-3.27-1.64"
+                ></path>
+              </svg>
+            </a>
+            ignaciohuichal@gmail.com
+          </p>
         </div>
       </div>
-    </div>
   </div>
 </section>
 
