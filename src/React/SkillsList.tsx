@@ -43,18 +43,18 @@ const SkillsList = () => {
       "Sistemas de autenticación",
       "Optimización de rendimiento",
     ],
-    "Aplicaciones web a medida": [
+    "Aplicaciones Web a Medida": [
       "Interfaces intuitivas e interactivas",
       "Dashboard",
       "Escalabilidad para crecer con su negocio",
       "Integración con sus sistemas existentes",
       "Seleccionaremos las mejores herramientas y tecnologías para optimizar sus operaciones"
     ],
-    "Automatización de procesos": [
+    "Automatización de Procesos": [
       "Automatizo tareas repetitivas de tu negocio",
       "IA para toma de decisiones"
     ],
-    "Mantenimiento y soporte técnico": [
+    "Mantenimiento y Soporte": [
       "Nos aseguramos de que el software funcione correctamente después de su puesta en marcha"
     ]
   };
@@ -75,7 +75,7 @@ const SkillsList = () => {
               <div className="flex items-center gap-3 p-4">
                 {CategoryIcons[category]}
                 <div className="flex items-center gap-2 flex-grow justify-between">
-                  <div className="min-w-0 max-w-[200px] md:max-w-none overflow-hidden">
+                  <div className="min-w-0 md:max-w-[600px] overflow-hidden">
                     <span className="block truncate text-[var(--white)] text-lg">
                       {category}
                     </span>
