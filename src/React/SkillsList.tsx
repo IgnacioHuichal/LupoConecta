@@ -37,20 +37,26 @@ const SkillsList = () => {
   const [openItem, setOpenItem] = useState<string | null>(null);
 
   const skills = {
-    "Aplicaciones web a medida": [
-      "Interfaces interactivas",
-      "Dashboard",
-      "Landing pages interactivas",
-    ],
-    "Automatización de procesos": [
-      "Automatizo tareas repetitivas de tu negocio",
-      "React Native mobile apps",
-    ],
     "API REST": [
       "Desarrollo APIs escalables y documentadas para conectar tu app móvil, web o servicios de terceros",
+      "Seguridad avanzada y control de acceso",
       "Sistemas de autenticación",
       "Optimización de rendimiento",
     ],
+    "Aplicaciones Web a Medida": [
+      "Interfaces intuitivas e interactivas",
+      "Dashboard",
+      "Escalabilidad para crecer con su negocio",
+      "Integración con sus sistemas existentes",
+      "Seleccionaremos las mejores herramientas y tecnologías para optimizar sus operaciones"
+    ],
+    "Automatización de Procesos": [
+      "Automatizo tareas repetitivas de tu negocio",
+      "IA para toma de decisiones"
+    ],
+    "Mantenimiento y Soporte": [
+      "Nos aseguramos de que el software funcione correctamente después de su puesta en marcha"
+    ]
   };
 
   const toggleItem = (item: string) => {
@@ -58,10 +64,7 @@ const SkillsList = () => {
   };
 
   return (
-    <div className="text-left pt-3 md:pt-9">
-      <h3 className="text-[var(--white)] text-3xl md:text-4xl font-semibold md:mb-6">
-        ¿Qué hago?
-      </h3>
+    <div className="text-left">
       <ul className="space-y-4 mt-4 text-lg">
         {Object.entries(skills).map(([category, items]) => (
           <li key={category} className="w-full">
@@ -72,7 +75,7 @@ const SkillsList = () => {
               <div className="flex items-center gap-3 p-4">
                 {CategoryIcons[category]}
                 <div className="flex items-center gap-2 flex-grow justify-between">
-                  <div className="min-w-0 max-w-[200px] md:max-w-none overflow-hidden">
+                  <div className="min-w-0 md:max-w-[600px] overflow-hidden">
                     <span className="block truncate text-[var(--white)] text-lg">
                       {category}
                     </span>
