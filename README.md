@@ -1,31 +1,19 @@
-
-## **Project structure**
+## **Local configuration**
+1. Clone the repo:
 ```
-public/
-└── svg/
-src/
-├── Components/
-├── layouts/
-├── React/
-└── pages/
-```
-
-## **Local configuration** 
-1. Clone the repo:  
-```
-git clone 
+git clone
 ```
 2. Install dependencies:
-```  
+```
 npm install
 ```
 3. Start the develpoment server:
-```  
+```
 npm run dev
 ```
 
 ## **License**
 
-> This project is licensed under the [MIT License](https://opensource.org/licenses/mit).  
-> According to the license terms, any redistribution (including compiled or modified versions), you **must** retain the original copyright 
+> This project is licensed under the [MIT License](https://opensource.org/licenses/mit).
+> According to the license terms, any redistribution (including compiled or modified versions), you **must** retain the original copyright
 > notice and the full license text. Copyright © 2025 Oscar Hernandez. All rights reserved.
