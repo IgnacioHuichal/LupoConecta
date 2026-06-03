@@ -37,13 +37,7 @@ const SkillsList = () => {
   const [openItem, setOpenItem] = useState<string | null>(null);
 
   const skills = {
-    "API REST": [
-      "Desarrollo APIs escalables y documentadas para conectar tu app móvil, web o servicios de terceros",
-      "Seguridad avanzada y control de acceso",
-      "Sistemas de autenticación",
-      "Optimización de rendimiento",
-    ],
-    "Aplicaciones Web a Medida": [
+    "Aplicaciones a Medida": [
       "Interfaces intuitivas e interactivas",
       "Dashboard",
       "Escalabilidad para crecer con su negocio",
@@ -51,7 +45,7 @@ const SkillsList = () => {
       "Seleccionaremos las mejores herramientas y tecnologías para optimizar sus operaciones"
     ],
     "Automatización de Procesos": [
-      "Automatizo tareas repetitivas de tu negocio",
+      "Automatizción de tareas repetitivas de tu negocio",
       "IA para toma de decisiones"
     ],
     "Mantenimiento y Soporte": [
